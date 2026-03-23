@@ -1,0 +1,18 @@
+[Postman]
+    ↓ PUT /producto/1 + JSON
+[Controller]
+    ↓ llama a service.actualizarProducto(1, producto)
+[Service]
+    ↓ valida datos
+    ↓ llama a repository.actualizar(1, producto)
+[Repository]
+    ↓ busca en la lista por ID
+    ↓ reemplaza si encuentra
+    ↓ devuelve producto actualizado o null
+[Service]
+    ↓ devuelve lo que recibió del repository
+[Controller]
+    ↓ maneja el resultado (200, 400, 404)
+    ↓ construye respuesta HTTP
+[Postman]
+    recibe respuesta con código y body
